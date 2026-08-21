@@ -14,12 +14,12 @@ jobs:
       packages: read
 
     steps:
-      - name: Login Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ secrets.SECRET_DOCKER_USR }}
-          password: ${{ secrets.TK_GITHUB_REGISTRY }}
+      # - name: Login Registry
+      #   uses: docker/login-action@v3
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ secrets.SECRET_DOCKER_USR }}
+      #     password: ${{ secrets.TK_GITHUB_REGISTRY }}
 
       - name: Run container
         run: docker run ghcr.io/${{ vars.DOCKER_USR }}/operator-echo-sha256:latest foobar
