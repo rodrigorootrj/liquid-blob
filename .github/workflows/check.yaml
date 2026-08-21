@@ -8,6 +8,7 @@ on:
 
 env:
   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+  GET_DOCKER_USR: ${{ vars.DOCKER_USR }}
 
 jobs:
   afere_variavel:
@@ -35,4 +36,10 @@ jobs:
         continue-on-error: true
         env:
           VAR: ${{ vars.DOCKER_USR }}
+        run: echo $VAR
+
+      - name: Teste de atribuicao III
+        continue-on-error: true
+        env:
+          VAR: ${{ vars.GET_DOCKER_USR }}
         run: echo $VAR
