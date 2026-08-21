@@ -22,4 +22,4 @@ jobs:
           password: ${{ secrets.TK_GITHUB_REGISTRY }}
 
       - name: Run container
-        run: docker run ghcr.io/${{ secrets.SECRET_DOCKER_USR }}/operator-echo-sha256:latest foobar
+        run: docker run ghcr.io/${{ vars.DOCKER_USR }}/operator-echo-sha256:latest foobar
