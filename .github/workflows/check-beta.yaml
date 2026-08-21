@@ -18,7 +18,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ vars.DOCKER_USR }}
+          username: ${{ secrets.SECRET_DOCKER_USR }}
           password: ${{ secrets.TK_GITHUB_REGISTRY }}
 
       - name: Run container
