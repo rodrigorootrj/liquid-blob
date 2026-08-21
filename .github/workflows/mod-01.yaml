@@ -3,7 +3,7 @@ name: teste-disabled
 
 on:
   push:
-    branches: mod-01-disabled
+    branches: mod-01
 
 jobs:
   login:
@@ -15,4 +15,4 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          password: ${{ secrets.TK_GITHUB_REGISTRY_3 }}

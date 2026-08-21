@@ -3,7 +3,7 @@ name: teste-mod-02
 
 on:
   push:
-    branches: mod-01
+    branches: mod-01-disabled
 
 jobs:
   login:
