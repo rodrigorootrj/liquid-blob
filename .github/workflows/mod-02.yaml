@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test secret
         env:
-          TOKEN: ${{ secrets.DOCKER_TOKEN }}
+          TOKEN: ${{ secrets.TK_GITHUB_REGISTRY_3 }}
         run: |
           if [ -z "$TOKEN" ]; then
             echo "SECRET VAZIO"

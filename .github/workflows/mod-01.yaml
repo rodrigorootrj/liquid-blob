@@ -3,7 +3,7 @@ name: teste-disabled
 
 on:
   push:
-    branches: mod-01
+    branches: mod-01-disabled
 
 jobs:
   login:
