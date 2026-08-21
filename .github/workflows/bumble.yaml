@@ -3,16 +3,16 @@ name: teste-disabled
 
 on:
   push:
-    branches:
-      - main-disabled
-
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-  GET_DOCKER_USR: ${{ vars.DOCKER_USR }}
+    branches: main
 
 jobs:
-  afere_variavel:
+  login:
     runs-on: ubuntu-latest
     steps:
-      - name: List all env vars
-        run: printenv
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.TK_GITHUB_REGISTRY_2 }}
