@@ -1,5 +1,5 @@
 
-name: Docker Hub Registry
+name: teste
 
 on:
   push:
