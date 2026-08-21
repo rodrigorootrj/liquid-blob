@@ -1,0 +1,47 @@
+
+name: Docker Hub Registry
+
+on:
+  push:
+    branches:
+      - teste
+
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
+jobs:
+  afere_variavel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check secret
+        continue-on-error: true
+        env:
+          MY_SECRET: ${{ secrets.TK_GITHUB_REGISTRY }}
+        if: ${{ env.MY_SECRET == '' }}
+        run: echo "MY_SECRET não existe"
+
+      - name: Secret not found
+        env:
+          MY_SECRET: ${{ secrets.TK_GITHUB_REGISTRY }}
+        if: ${{ env.MY_SECRET != '' }}        
+        run: echo "MY_SECRET existe"
+
+
+      - name: Teste de atribuicao
+#        env:
+        run: echo Teste de atribuicao 1030
+
+      - name: Teste de atribuicao II
+        continue-on-error: true
+        env:
+          VAR: ${{ vars.DOCKER_USR }}
+        run: echo $VAR
+# 
+      # - name: Variable content
+        # if: ${{ vars.REGISTRY != '' }}
+        # run: echo ${{ vars.REGISTRY }}
+# 
+      # - name: Variable content
+#        env:
+        # if: ${{ vars.DOCKER_PROJETO != '' }}
+        # run: echo ${{ vars.DOCKER_PROJETO }}
