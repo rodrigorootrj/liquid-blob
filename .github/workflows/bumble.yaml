@@ -16,7 +16,3 @@ jobs:
     steps:
       - name: List all env vars
         run: printenv
-
-      - name: Set Environment
-        id: env-setup        
-          run: echo "DOCKER_TAG=${{ vars.DOCKER_USR }} >> "$GITHUB_ENV"
