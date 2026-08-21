@@ -17,4 +17,4 @@ jobs:
       image: rodrigorootrj/operator-echo-sha256
 
     steps:
-      - run: ./operador.sh foobar
+      - run: ./operador.sh foobar 
