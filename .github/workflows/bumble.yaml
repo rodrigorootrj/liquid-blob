@@ -1,10 +1,10 @@
 
-name: teste
+name: teste-disabled
 
 on:
   push:
     branches:
-      - main
+      - main-disabled
 
 env:
   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
@@ -16,3 +16,7 @@ jobs:
     steps:
       - name: List all env vars
         run: printenv
+
+      - name: Set Environment
+        id: env-setup        
+          run: echo "DOCKER_TAG=${{ vars.DOCKER_USR }} >> "$GITHUB_ENV"
