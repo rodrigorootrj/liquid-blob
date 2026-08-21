@@ -1,0 +1,21 @@
+
+name: teste-mod-02
+
+on:
+  push:
+    branches: mod-01
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test secret
+        env:
+          TOKEN: ${{ secrets.DOCKER_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "SECRET VAZIO"
+            exit 1
+          fi
+
+          echo "SECRET EXISTE"    
