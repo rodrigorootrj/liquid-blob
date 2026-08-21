@@ -13,8 +13,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    container:
-      image: rodrigorootrj/operator-echo-sha256:latest
+    permissions:
+      packages: read
 
     steps:
-      - run: ./operador.sh foobar 
+      - name: Login GHCR
+        run: |
+          echo "${{ secrets.TK_GITHUB_REGISTRY }}" | \
+            docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Run container
+        run: docker run rodrigorootrj/operator-echo-sha256:latest foobar
