@@ -1,5 +1,5 @@
 
-name: teste-disabled
+name: teste-modulo
 
 on:
   push:
