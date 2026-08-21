@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: rodrigorootrj/operator-echo-sha256
+      image: rodrigorootrj/operator-echo-sha256:latest
 
     steps:
       - run: ./operador.sh foobar 
